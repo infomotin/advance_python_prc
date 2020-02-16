@@ -30,3 +30,15 @@ getattr(v,'z')
 #in operations 
 hasattr(v,'+')
 
+## Modified 
+
+class Vector1:
+    def __init__(self,**codes):
+        self.__dict__.update(codes)
+
+
+    def __repr__(self):
+        return "{}({},{})".format(
+                                self.__class__.__name__,', '.join("{k} ={v}".format(k=k,v=self.__dict__[k])for k in sorted(self.__dict__.keys())))
+        #return
+ 
